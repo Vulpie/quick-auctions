@@ -1,0 +1,26 @@
+@use "../variables";
+
+@mixin header {
+    .header {
+        width: 100%;
+        display: flex;
+        background-color: variables.$main;
+        color: variables.$accents;
+        &__navbar {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            &_item {
+                color: variables.$accents;
+                text-decoration: none;
+                margin: 0 15px;
+            }
+        }
+        &__userbar {
+            display: flex;
+            align-items: center;
+            width: 30%;
+            justify-content: space-around;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+@use "static/header";
+
+.App {
+    text-align: center;
+    @include header.header;
+}
