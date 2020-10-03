@@ -1,40 +1,33 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import React, { useEffect } from 'react'
-import { NavLink as RouterNavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import LoginButton from '../LoginButton'
 import LogoutButton from '../LogoutButton'
 
 const Navbar = () => {
-	const { user, isAuthenticated, isLoading } = useAuth0()
-	useEffect(() => {
-		console.log(isAuthenticated)
-	}, [isAuthenticated])
+    const { isAuthenticated, isLoading } = useAuth0()
+    useEffect(() => {
+        console.log(isAuthenticated)
+    }, [isAuthenticated])
 
-	if (isLoading) {
-		return <div>Loading ...</div>
-	}
+    if (isLoading) {
+        return <div>Loading ...</div>
+    }
 
-	return (
-		<div className="navbar">
-			<div className="navbar_item" as={RouterNavLink} to="/">
-				Home
-			</div>
-			<div className="navbar_item" as={RouterNavLink} to="/profile">
-				Profile
-			</div>
-			<div className="navbar_item" as={RouterNavLink} to="/savings">
-				Savings
-			</div>
-			{isAuthenticated ? <LogoutButton /> : <LoginButton />}
-			{isAuthenticated && (
-				<div>
-					<img src={user.picture} alt={user.name} />
-					<h2>{user.name}</h2>
-					<p>{user.email}</p>
-				</div>
-			)}
-		</div>
-	)
+    return (
+        <div className="navbar">
+            <Link className="navbar_item" to="/">
+                Home
+            </Link>
+            <Link className="navbar_item" to="/profile">
+                Profile
+            </Link>
+            <Link className="navbar_item" to="/savings">
+                Savings
+            </Link>
+            {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+        </div>
+    )
 }
 
 export default Navbar
