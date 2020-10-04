@@ -26,10 +26,16 @@ const TEST_AUCTIONS = [
 
 const LatestAuctions = () => {
 	const [auctions, setAuctions] = useState([...TEST_AUCTIONS])
+	useEffect(() => {
+		fetch('/api/auctions/latest')
+			.then((data) => data.json())
+			.then((res) => console.log(res))
+	}, [])
 	return (
 		<div className="home__list">
-			{auctions.map((item) => (
+			{auctions.map((item, index) => (
 				<AuctionItem
+					key={`${index}_lates_auction_item`}
 					name={item.name}
 					price={item.price}
 					time_left={item.time_left}
