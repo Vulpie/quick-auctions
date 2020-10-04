@@ -2,24 +2,25 @@
 @use "../Global/buttons";
 
 @mixin header {
-    .header {
-        width: 100%;
-        display: flex;
-        background-color: variables.$main;
-        color: variables.$accents;
-        &__navbar {
-            width: 70%;
-            display: flex;
-            align-items: center;
-            @include buttons.global-button(variables.$accents);
-        }
-        &__userbar {
-            display: flex;
-            align-items: center;
-            width: 30%;
-            justify-content: space-around;
+	.header {
+		width: 100%;
+		display: flex;
+		background-color: variables.$main;
+		color: variables.$accents;
+		font-size: 1.5rem;
+		&__navbar {
+			width: 70%;
+			display: flex;
+			align-items: center;
+			@include buttons.global-button(variables.$accents);
+		}
+		&__userbar {
+			display: flex;
+			align-items: center;
+			width: 30%;
+			justify-content: space-around;
 
-            @include buttons.global-button(variables.$accents);
-        }
-    }
+			@include buttons.global-button(variables.$accents);
+		}
+	}
 }
