@@ -1,11 +1,13 @@
 @use "static/header";
 @use "views/profile";
+@use "views/home";
 
 .App {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    @include header.header;
-    @include profile.profile;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include header.header;
+	@include profile.profile;
+	@include home.home;
 }

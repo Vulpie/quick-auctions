@@ -1,0 +1,35 @@
+@use "../variables";
+
+@mixin home {
+	.home {
+		width: 90%;
+		&__title {
+			font-size: 1.5rem;
+		}
+		&__list {
+			display: flex;
+			flex-direction: column;
+			width: 40%;
+			&_item {
+				display: flex;
+				flex-direction: row;
+				width: 100%;
+				&_property {
+					margin: 0 5px;
+					width: 33%;
+					&_title {
+						font-size: 1.3rem;
+						font-weight: 700;
+						width: 100%;
+						word-wrap: break-word;
+					}
+					&_value {
+						font-style: italic;
+						width: 100%;
+						word-wrap: break-word;
+					}
+				}
+			}
+		}
+	}
+}
