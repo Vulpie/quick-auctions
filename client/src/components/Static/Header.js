@@ -29,7 +29,11 @@ const Header = () => {
             </div>
 
             <div className="header__userbar">
-                <p className="header__userbar_name">Hi {user.name}</p>
+                {isAuthenticated ? (
+                    <p className="header__userbar_name">Hi {user.name}</p>
+                ) : (
+                    <p className="header__userbar_name">Hi stranger</p>
+                )}
                 {isAuthenticated ? <LogoutButton /> : <LoginButton />}
             </div>
         </div>

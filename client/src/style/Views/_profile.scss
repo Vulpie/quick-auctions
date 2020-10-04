@@ -1,0 +1,38 @@
+@mixin profile {
+    .profile {
+        padding-top: 10px;
+        width: 90%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        &__picture {
+            grid-column: 1/1;
+            grid-row: 1/1;
+            align-self: center;
+            justify-self: center;
+            max-height: 200px;
+        }
+        &__name {
+            grid-column: 2/3;
+            grid-row: 1/1;
+            column-span: 2;
+
+            align-self: center;
+            justify-self: center;
+            background-color: red;
+        }
+        &__details {
+            grid-column: 2/3;
+            grid-row: 2/2;
+            column-span: 2;
+            align-self: center;
+            justify-self: center;
+            background-color: blue;
+            &_item {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,6 +1,11 @@
 @use "static/header";
+@use "views/profile";
 
 .App {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @include header.header;
+    @include profile.profile;
 }
