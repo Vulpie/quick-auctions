@@ -17,13 +17,13 @@ const Header = () => {
     return (
         <div className="header">
             <div className="header__navbar">
-                <Link className="header__navbar_item" to="/">
+                <Link className="header__navbar_button" to="/">
                     Home
                 </Link>
-                <Link className="header__navbar_item" to="/profile">
+                <Link className="header__navbar_button" to="/profile">
                     Profile
                 </Link>
-                <Link className="header__navbar_item" to="/savings">
+                <Link className="header__navbar_button" to="/savings">
                     Savings
                 </Link>
             </div>

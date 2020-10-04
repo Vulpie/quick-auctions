@@ -1,4 +1,5 @@
 @use "../variables";
+@use "../Global/buttons";
 
 @mixin header {
     .header {
@@ -10,17 +11,15 @@
             width: 70%;
             display: flex;
             align-items: center;
-            &_item {
-                color: variables.$accents;
-                text-decoration: none;
-                margin: 0 15px;
-            }
+            @include buttons.global-button(variables.$accents);
         }
         &__userbar {
             display: flex;
             align-items: center;
             width: 30%;
             justify-content: space-around;
+
+            @include buttons.global-button(variables.$accents);
         }
     }
 }

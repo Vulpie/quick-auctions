@@ -1,0 +1,12 @@
+@mixin global-button($color) {
+    &_button {
+        color: $color;
+        text-decoration: none;
+        padding: 5px;
+        margin: 0 10px;
+    }
+    &_button:hover {
+        cursor: pointer;
+        box-shadow: 2px 4px 10px $color;
+    }
+}
