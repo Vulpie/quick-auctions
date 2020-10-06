@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import AuctionItem from '../../Static/AuctionItem'
-const MyAuctions = () => {
+const MyItems = () => {
 	const [auctions, setAuctions] = useState()
 	const { getAccessTokenSilently } = useAuth0()
 
@@ -32,7 +32,7 @@ const MyAuctions = () => {
 		try {
 			const token = await getAccessTokenSilently()
 
-			const my_auctions = await fetch('/user/auctions/my', {
+			const my_auctions = await fetch('/user/items/my', {
 				method: 'get',
 				headers: { Authorization: `Bearer ${token}` },
 			})
@@ -47,16 +47,17 @@ const MyAuctions = () => {
 		getMyAuctions()
 	}, [])
 	return (
-		<div className="auctions__my-auctions">
-			<h3>My auctions</h3>
+		<div className="auctions__my-items">
+			<h3>My items</h3>
+
 			{auctions ? (
 				TEST_AUCTIONS.map((item, index) => (
 					<AuctionItem
-						key={`${index}_my_auction_item`}
+						key={`${index}_my_items_item`}
 						name={item.name}
 						price={item.price}
 						time_left={item.time_left}
-						base_class="auctions__my-auctions_"
+						base_class="auctions__my-items_"
 					/>
 				))
 			) : (
@@ -66,4 +67,4 @@ const MyAuctions = () => {
 	)
 }
 
-export default MyAuctions
+export default MyItems

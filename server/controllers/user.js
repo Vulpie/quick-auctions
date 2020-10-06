@@ -44,3 +44,12 @@ exports.getMyAuctions = async (req, res) => {
 		res.json(error)
 	}
 }
+
+exports.getMyItems = async (req, res) => {
+	try {
+		const owner = req.user.sub
+		res.json({ user: owner, msg: 'ok' })
+	} catch (error) {
+		res.json(error)
+	}
+}
