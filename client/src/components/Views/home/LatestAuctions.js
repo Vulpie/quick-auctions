@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import AuctionItem from './AuctionItem'
+import AuctionItem from '../../Static/AuctionItem'
 
 const TEST_AUCTIONS = [
 	{
@@ -39,6 +39,7 @@ const LatestAuctions = () => {
 					name={item.name}
 					price={item.price}
 					time_left={item.time_left}
+					base_class="home__"
 				/>
 			))}
 		</div>

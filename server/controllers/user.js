@@ -35,3 +35,12 @@ exports.addUser = (req, res) => {
 		}
 	)
 }
+
+exports.getMyAuctions = async (req, res) => {
+	try {
+		const owner = req.user.sub
+		res.json({ user: owner, msg: 'ok' })
+	} catch (error) {
+		res.json(error)
+	}
+}

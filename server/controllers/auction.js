@@ -28,12 +28,12 @@ exports.newAuction = async (req, res) => {
 	}
 }
 
-exports.getUserAuctions = async (req,res) => {
-	try {
-		const owner = req.user.sub
-		client.hgetall()
-	} catch (error) {
-		console.log(error)
-		res.json('nie ok')
-	}
-}
+// exports.getUserAuctions = async (req,res) => {
+// 	try {
+// 		const owner = req.user.sub
+// 		client.hgetall()
+// 	} catch (error) {
+// 		console.log(error)
+// 		res.json('nie ok')
+// 	}
+// }

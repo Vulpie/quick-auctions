@@ -1,4 +1,5 @@
 @use "../variables";
+@use "../Global/auction-list";
 
 @mixin home {
 	.home {
@@ -6,40 +7,6 @@
 		&__title {
 			font-size: 1.5rem;
 		}
-		&__list {
-			display: flex;
-			flex-direction: column;
-			width: 40%;
-			&_item {
-				width: 100%;
-				display: flex;
-				flex-direction: row;
-				&_property {
-					//margin: 0 5px;
-					width: 33%;
-					box-sizing: border-box;
-					padding: 0;
-					margin: 0;
-					&_title {
-						font-size: 1.3rem;
-						font-weight: 700;
-						width: 100%;
-						word-wrap: break-word;
-						background: variables.$main;
-						color: variables.$accents;
-						padding: 5px 0;
-					}
-					&_value {
-						font-style: italic;
-						width: 100%;
-						word-wrap: break-word;
-					}
-				}
-
-				&_property:hover {
-					background-color: variables.$background-hover;
-				}
-			}
-		}
+		@include auction-list.auction-list;
 	}
 }

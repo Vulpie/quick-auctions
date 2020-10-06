@@ -5,39 +5,39 @@ import LoginButton from './LoginButton'
 import LogoutButton from './LogoutButton'
 
 const Header = () => {
-    const { isAuthenticated, isLoading, user } = useAuth0()
-    useEffect(() => {
-        console.log(isAuthenticated)
-    }, [isAuthenticated])
+	const { isAuthenticated, isLoading, user } = useAuth0()
+	useEffect(() => {
+		console.log(isAuthenticated)
+	}, [isAuthenticated])
 
-    if (isLoading) {
-        return <div>Loading ...</div>
-    }
+	if (isLoading) {
+		return <div>Loading ...</div>
+	}
 
-    return (
-        <div className="header">
-            <div className="header__navbar">
-                <Link className="header__navbar_button" to="/">
-                    Home
-                </Link>
-                <Link className="header__navbar_button" to="/profile">
-                    Profile
-                </Link>
-                <Link className="header__navbar_button" to="/savings">
-                    Savings
-                </Link>
-            </div>
+	return (
+		<div className="header">
+			<div className="header__navbar">
+				<Link className="header__navbar_button" to="/">
+					Home
+				</Link>
+				<Link className="header__navbar_button" to="/profile">
+					Profile
+				</Link>
+				<Link className="header__navbar_button" to="/user/auctions">
+					My auctions
+				</Link>
+			</div>
 
-            <div className="header__userbar">
-                {isAuthenticated ? (
-                    <p className="header__userbar_name">Hi {user.name}</p>
-                ) : (
-                    <p className="header__userbar_name">Hi stranger</p>
-                )}
-                {isAuthenticated ? <LogoutButton /> : <LoginButton />}
-            </div>
-        </div>
-    )
+			<div className="header__userbar">
+				{isAuthenticated ? (
+					<p className="header__userbar_name">Hi {user.name}</p>
+				) : (
+					<p className="header__userbar_name">Hi stranger</p>
+				)}
+				{isAuthenticated ? <LogoutButton /> : <LoginButton />}
+			</div>
+		</div>
+	)
 }
 
 export default Header

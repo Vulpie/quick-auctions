@@ -1,0 +1,13 @@
+@use "../variables";
+@use "../Global/auction-list";
+
+@mixin auctions {
+	.auctions {
+		width: 90%;
+		&__my-auctions {
+			width: 50%;
+
+			@include auction-list.auction-list;
+		}
+	}
+}
