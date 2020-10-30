@@ -1,12 +1,14 @@
 # Quick Auctions
 
+Web application to quickly buy, sell or auction small items.
+
 ## Technology
 
 -   React
 -   Node.js
 -   Express.js
 -   Auth0
--   Redis
+-   SQLite
 
 ## Server environmental variables:
 
