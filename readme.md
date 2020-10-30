@@ -1,6 +1,6 @@
 # Quick Auctions
 
-Web application to quickly buy, sell or auction small items.
+Web application that allows you to quickly buy, sell or auction small items.
 
 ## Technology
 
